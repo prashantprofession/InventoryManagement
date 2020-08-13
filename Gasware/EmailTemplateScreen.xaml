@@ -1,0 +1,63 @@
+﻿<Window x:Class="Gasware.EmailTemplateScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gasware" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"  Top="80" Left="200"  Background="CornflowerBlue" 
+        Title="Email Templates" Height="600" Width="1000">
+    <Grid Height="600" Width="1000" Background="CornflowerBlue" VerticalAlignment="Top">
+
+        <DataGrid x:Name="emailTemplatesDataGrid" ColumnWidth="*" x:FieldModifier="public"
+                  AutoGenerateColumns="False" HorizontalAlignment="Left"
+                  Height="500"  VerticalAlignment="Top" Width="1000" Margin="0,0,0,0" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding EmailTemplateId}" IsReadOnly="True" Width="60" />
+                <DataGridTextColumn Header="Type" Binding="{Binding EmailType}"  IsReadOnly="True" Width="90" />
+                <DataGridTextColumn Header="Email-Id" Binding="{Binding EmailId}"  IsReadOnly="True" Width="100" />
+                <DataGridTextColumn Header="Display Name" Binding="{Binding DisplayName}"  IsReadOnly="True" Width="120" />
+                <DataGridTextColumn Header="Subject" Binding="{Binding Subject}"  IsReadOnly="True" Width="150" />
+                <DataGridTextColumn Header="Body" Binding="{Binding Body}"  IsReadOnly="True" Width="270" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Action"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="updateBtn" Content="Update"  Click="btnEmailTemplateUpdate_Clicked" Background="LimeGreen"/>
+                                <Button x:Name="deleteBtn" Content="Delete"  Click="btnEmailTemplateDelete_Clicked" Background="Orange"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Image Source="companylogo.png" Height="100" Margin="0,0,0,14" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+
+        <Button x:Name="btnExport" FontSize="12" BorderThickness="0" Height="30" Background="MediumPurple"
+                HorizontalAlignment="Left" Margin="110,517,0,53" FontWeight="Bold" 
+                ToolTip="Exports data to csv file!" ToolTipService.Placement="Top"
+                Width="50" Click="btnExportToCsvClicked">
+            <materialDesign:PackIcon Kind="FileCsv" Height="20" />
+        </Button>
+
+        <Button  x:Name="btnPrint"  FontSize="12" FontWeight="Bold" BorderThickness="0" Height="30" 
+                 Background="MediumPurple" ToolTip="Prints data displayed in the above table!" ToolTipService.Placement="Top"
+                HorizontalAlignment="Left" Margin="170,517,0,53" Width="50" Click="btnPrintGridClicked">
+            <materialDesign:PackIcon Kind="Printer" Height="20" />
+        </Button>
+
+        <Button x:Name="btnInsertEmailTemplate" Content="Add Email Template" 
+                HorizontalAlignment="Left"  
+                Click="btnNewInsertEmailTemplate_Click" Background="LimeGreen"
+                FontSize="16" VerticalAlignment="Top" Width="200" Margin="320,510,0,0" Height="40"/>
+        <Button x:Name="btnCloseInsertEmailTemplate" Content="Cancel" HorizontalAlignment="Left"  
+                Click="btnCloseEmailTemplate_Click"
+                FontSize="16" Width="200" Margin="620,510,0,45" Height="40" Background="Orange"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,162 @@
+﻿<Window x:Class="Gasware.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gasware" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Top="80" Left="200" 
+        Title="Dashboard" Height="600" Width="1000">
+    <Grid Margin="0,0,0,0" >
+        <Grid.OpacityMask>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFA6E6C8" Offset="0"/>
+                <GradientStop Color="#FF99E0BF" Offset="1"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FFF9F9F9" Offset="1"/>
+                <GradientStop Color="#FFF3F3F3" Offset="0.514"/>
+                <GradientStop Color="#FF88DA59" Offset="0.005"/>
+            </RadialGradientBrush>
+        </Grid.OpacityMask>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF7091B1" Offset="0"/>
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FF91A7D9" Offset="1"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FF5978C1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="215*"/>
+            <ColumnDefinition Width="225*"/>
+            <ColumnDefinition Width="225*"/>
+            <ColumnDefinition Width="225*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="companylogo.png" Height="100" VerticalAlignment="Bottom" />
+        <Label x:Name="btnUserImage" FontStyle="Italic" Grid.Row="0"  
+                Grid.Column="1"             
+                Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top"
+                FontSize="20" FontWeight="DemiBold"  Width="30" Margin="30,6,0,0" >
+            <materialDesign:PackIcon Kind="UserOutline" Height="20" Foreground="White" />
+
+        </Label>
+
+
+        <Label Content="" x:Name="lblUserName" FontStyle="Italic" Grid.Row="0"  Grid.Column="1"             
+               Height="40"  HorizontalAlignment="Left" VerticalAlignment="Top"
+               FontSize="20" FontWeight="DemiBold"  Width="95" Margin="50,0,0,0" />
+
+        <Button Name="btnBilling" Content="Transactions" Width="150" FontSize="15"
+                HorizontalAlignment="Left" Height="60" BorderThickness="0"
+                Grid.Column="1" FontWeight="bold" Grid.Row="1"  Background="LimeGreen"
+                Click="billing_Click" Margin="3,8,0,232">
+        </Button>
+
+        <Button x:Name="vendor" Content="Dealers" Grid.Column="1" Width="150" Background="LimeGreen"
+                Margin="3,100,0,132" FontWeight="bold" Height="60" HorizontalAlignment="Left"
+                Click="vendor_Click" Grid.Row="1" FontSize="15" >
+
+        </Button>
+
+        <Button x:Name="btnDailyReport" Content="Daily Reports" Margin="2,200,69,40"
+                FontWeight="bold" Background="LimeGreen"
+                Width="150" Click="dailyReport_Click" Height="60"  
+                Grid.Row="1" Grid.Column="1" FontSize="15">
+        </Button>
+
+        <Button x:Name="btnInvoice" Content="Invoices" Margin="3,0,68,240" FontWeight="bold"
+            Width="150" Click="invoice_Click" Height="60"  Background="LimeGreen"
+            Grid.Row="2" Grid.Column="1" FontSize="15"/>
+
+
+        <Button x:Name="btnForecastCustomers" Content="Forecast" Margin="3,0,68,40" FontWeight="bold"
+            Width="150" Click="forecastCustomers_Click" Height="60"  Background="LimeGreen"
+            Grid.Row="2" Grid.Column="1" FontSize="15"/>
+
+
+        <Button x:Name="customers" Content="Customers" Height="60" Width="160" Margin="1,8,50,230"
+                FontWeight="bold" Background="LimeGreen" Click="customers_Click" FontSize="15"
+                Grid.Column="2" Grid.Row="1"/>
+
+        <Button x:Name="deliveryperson" Content="Staff" Margin="0,105,50,135" Grid.Column="2" 
+                FontWeight="bold" Background="LimeGreen" Click="deliveryperson_Click" Grid.Row="1" FontSize="15"
+                Height="60" Width="160"/>
+
+
+        <Button x:Name="btnStockIn" Content="Stock Entries" Margin="1,205,50,35" 
+                FontWeight="bold"
+                Height="60" Width="160" FontSize="15"
+                Grid.Column="2" Background="LimeGreen" 
+                Click="stockin_Click" Grid.Row="1" >
+        </Button>
+
+        <Button x:Name="btnReports" Content="Reports" Margin="0,0,50,240" 
+            FontWeight="bold" Height="60" Width="160" FontSize="15"
+            Grid.Column="2" Background="LimeGreen" 
+            Click="reports_Click" Grid.Row="2" />
+
+        <Button x:Name="btnDatabaseOperations" Content="DB Operations" Margin="0,0,50,40" 
+            FontWeight="bold" Height="60" Width="160" FontSize="15"
+            Grid.Column="2" Background="LimeGreen" 
+            Click="dbOperations_Click" Grid.Row="2" />
+
+
+        <Button x:Name="products" Content="Products" Margin="0,5,50,235" Height="60" Width="150"
+                Grid.Column="3" FontWeight="bold" Background="LimeGreen" 
+                Click="products_Click" Grid.Row="1" FontSize="15" />
+
+        <Button x:Name="users" Content="Users" Margin="0,105,50,135" Grid.Column="3" FontWeight="bold"
+                Background="LimeGreen" Click="users_Click" Grid.Row="1" Height="60" Width="150" 
+                FontSize="15"/>
+
+        <Button x:Name="btnCompany" Content="Company" Grid.Column="3" FontWeight="Bold" Height="60" Width="150"
+                Margin="0,205,50,35" Background="LimeGreen" Click="btnCompany_Click" Grid.Row="1"
+                FontSize="15" />
+
+        <Button x:Name="btnEmailTemplate" Content="Email Templates" Grid.Column="3" FontWeight="Bold" Height="60" Width="150"
+                Margin="16,4,66,236" Background="LimeGreen" Click="btnEmailTemplate_Click" Grid.Row="2"
+                FontSize="15" />
+
+
+        <Label x:Name="lblLicense" Content="License" FontWeight="Bold" FontStyle="Italic" Grid.Column="4" 
+               HorizontalAlignment="Left" Height="25" Margin="79,173,0,0" VerticalAlignment="Top" Width="150" Grid.Row="2"/>
+        <Label Content="Inventory Management" Grid.Column="2"  Height="45" 
+               FontSize="25" FontWeight="Bold" Foreground="#FF51D316"
+               Margin="37,3,133,0" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+
+
+        <Button x:Name="refreshbalances" Content="Update Balances" Background="LimeGreen"
+                HorizontalAlignment="Left" Grid.Row="0" FontSize="12"
+                Width="125" Grid.Column="4" Margin="0,25,0,2" Click="refreshbalances_Click"/>
+
+        <ListBox Name="balanceList" Grid.Column="4" Height="200" 
+                 Margin="0,0,2,0" VerticalAlignment="Top" FontWeight="Bold" ItemsSource="{Binding StockDetails}"
+                 SelectionChanged="ListBox_SelectionChanged" Grid.Row="1" Background="#FF5978C1">
+        </ListBox>
+        <Button x:Name="btnLicense" Content="License"  Width="120" FontSize="15" 
+                VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Bold" Height="60" Grid.Column="4"
+                Click="btnLicense_Click" Background="LimeGreen" Grid.Row="2" Margin="1,0,0,140"/>
+
+        <Button x:Name="btnLogOut" HorizontalAlignment="Left" 
+                Width="225" Grid.Column="4" Height="60" FontSize="15"
+                Margin="0,205,0,35" FontWeight="Bold" ToolTip="Logs you out from the application"
+                ToolTipService.Placement = "Left" 
+                Click="btnLogOut_Click" Background="Orange" Grid.Row="1">
+            <materialDesign:PackIcon Kind="Logout" Height="20" Width="40" Foreground="White" />
+        </Button>
+
+        <Label Name="obcb" Content="      OB          CB" HorizontalAlignment="Left"
+               FontSize="15" Margin="104,28,0,5" Grid.Row="0"
+               Width="117" Grid.Column="4" FontWeight="Bold"/>
+    </Grid>
+
+</Window>

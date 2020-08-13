@@ -1,0 +1,70 @@
+﻿<Window x:Class="Gasware.Reports"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gasware"
+        mc:Ignorable="d"  Top="80" Left="200"  Background="CornflowerBlue" 
+        Title="Reports" Height="600" Width="1000">
+    <Grid Height="600" Width="1000" Background="CornflowerBlue" VerticalAlignment="Top">
+
+        <Label Content="Report Maintainence"  Height="45" 
+               FontSize="25" FontWeight="Bold" Foreground="#FF51D316"
+               Margin="373,3,370,0" VerticalAlignment="Top" />
+
+
+        <Button x:Name="btnBalanceSheet" Content="Balance Sheet" Height="60" Width="150" Margin="80,80,0,0"
+                FontWeight="bold" Background="LimeGreen" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Click="customers_Click" FontSize="16"/>
+
+        <!--<Button x:Name="products" Content="Products" Margin="80,200,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="60" Width="150" FontWeight="bold" Background="LimeGreen" 
+                Click="products_Click" FontSize="16" />
+
+
+
+        <Button x:Name="btnInvoice" Content="Invoices" Margin="80,320,0,0" FontWeight="bold"
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                Width="150" Click="invoice_Click" Height="60"  Background="LimeGreen" FontSize="16"/>
+
+
+
+        <Button x:Name="deliveryperson" Content="Delivery Persons" Margin="426,80,0,0" 
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                FontWeight="bold" Background="LimeGreen" Click="deliveryperson_Click" FontSize="16"
+                Height="60" Width="150"/>
+
+        <Button x:Name="vendor" Content="Vendor" Width="150" Background="LimeGreen"
+                VerticalAlignment="Top" HorizontalAlignment="Left" 
+                Margin="426,200,0,0" FontWeight="bold" Height="60" 
+                Click="vendor_Click" FontSize="16" />
+
+        <Button x:Name="users" Content="Users" Margin="426,320,0,0" FontWeight="bold"
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                Background="LimeGreen" Click="users_Click" Height="60" Width="150" 
+                FontSize="16"/>
+
+        <Button Name="btnBilling" Content="Transactions" Width="150" FontSize="16"
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="60" BorderThickness="0" FontWeight="bold" 
+                Background="LimeGreen"
+                Click="billing_Click" Margin="750,80,0,0"/>
+
+
+
+        <Button x:Name="btnStockIn" Content="Stock Entry" Margin="750,200,0,0" 
+                FontWeight="bold" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="60" Width="150" FontSize="16" Background="LimeGreen" 
+                Click="stockin_Click" />
+
+        <Button x:Name="btnDailyReport" Content="Daily Report" Margin="750,320,0,0" FontWeight="bold"
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                Width="150" Click="dailyReport_Click" Height="60"  Background="LimeGreen" FontSize="16"/>
+        <Button x:Name="btnCancel" Content="Cancel" Margin="350,450,0,0" FontWeight="bold"
+            VerticalAlignment="Top" HorizontalAlignment="Left"
+            Background="Orange" Click="users_Click" Height="60" Width="293" 
+            FontSize="16"/>-->
+
+    </Grid>
+</Window>

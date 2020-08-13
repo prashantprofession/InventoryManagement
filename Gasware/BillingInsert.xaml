@@ -1,0 +1,131 @@
+﻿<Window x:Class="Gasware.BillingInsert" Background="CornflowerBlue"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gasware"
+        mc:Ignorable="d" Top="80" Left="200" 
+        Title="Add" Height="600" Width="1000">
+
+    <Grid Width="1000" Margin="0,0,100,0">
+        <Label Margin="0,-25,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Image Source="companylogo.png" Height="100"  VerticalAlignment="Bottom"
+                 />
+        </Label>
+        <Label FontSize="20" FontWeight="Bold" Name="addStock" Content="New Transaction" 
+               HorizontalAlignment="Center" Height="40" 
+               Margin="0,0,0,0" VerticalAlignment="Top" Width="165" Foreground="#FF51D316"/>
+
+        <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="130,65,0,0" TextWrapping="Wrap" 
+                   Text="Product:" VerticalAlignment="Top" Width="75" Height="25"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" FontSize="16"                  
+                  Name="productCombo" Margin="265,60,0,0" SelectionChanged="productCombo_SelectionChanged" >
+            <ComboBox.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="130,130,0,0" TextWrapping="Wrap" 
+                   Text="Customer :" VerticalAlignment="Top" Width="80"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="265,125,0,0" 
+                 x:Name="customersCombo" SelectionChanged="customersCombo_SelectionChanged" FontSize="16">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="130,195,0,0" 
+                   TextWrapping="Wrap" 
+                   Text="Rate/Qty :" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="txtRate" FontSize="16" HorizontalAlignment="Left"
+                   Margin="265,190,0,0" LostFocus="CalculatteBillAmount" 
+                   Text="" VerticalAlignment="Top" Width="200" TextWrapping="Wrap" />
+
+        <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="130,260,0,0" TextWrapping="Wrap" 
+                   Text="Delivery Quantity:" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="txtDeliveredQuantity" FontSize="16" HorizontalAlignment="Left" 
+                  Margin="265,255,0,0"
+                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" 
+                 LostFocus="CalculatteBillAmount"/>
+
+
+
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="130,325,0,0" 
+                   TextWrapping="Wrap" IsEnabled="False"
+                   Text="Bill Amount :" VerticalAlignment="Top" Width="104"/>
+        <TextBox x:Name="txtBillAmount" FontSize="16" HorizontalAlignment="Left" 
+                 Margin="265,320,0,0" IsEnabled="false"
+                  Text="" VerticalAlignment="Top" Width="200" TextWrapping="Wrap" />
+
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="130,390,0,0" 
+                   TextWrapping="Wrap" Text="Details :" VerticalAlignment="Top" 
+                   Width="104"/>
+        <TextBox x:Name="txtDetails" FontSize="16" HorizontalAlignment="Left" 
+                 Margin="265,385,0,0" IsEnabled="True"
+                  Text="" VerticalAlignment="Top" Width="600" TextWrapping="Wrap" />
+
+        <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="530,65,0,0" TextWrapping="Wrap" 
+                   Text="Bill Date:" VerticalAlignment="Top" Width="80" Height="25"/>
+        <DatePicker x:Name="billingDate" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Margin="665,60,0,0" Width="200" FontSize="16" />
+
+        <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="530,130,0,0" TextWrapping="Wrap" 
+                   Text="Incharge:" VerticalAlignment="Top" Width="100" Height="25"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="201" Margin="665,125,0,0" 
+                   x:Name="deliveryPersonsCombo" FontSize="16">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="530,195,0,0" TextWrapping="Wrap" 
+            Text="Latest Stock Rate:" VerticalAlignment="Top" Width="134"/>
+        <TextBox x:Name="txtStockRate" FontSize="16" HorizontalAlignment="Left" 
+            Height="28" Margin="665,190,0,0" IsEnabled="False"
+            TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+
+        <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="530,260,0,0" TextWrapping="Wrap" 
+            Text="Received Quantity:" VerticalAlignment="Top" Width="134"/>
+        <TextBox x:Name="txtRecivedQuantity" FontSize="16" HorizontalAlignment="Left" 
+                 Margin="665,255,0,0"
+            TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="530,325,0,0" TextWrapping="Wrap" 
+            Text="Received Amount :" VerticalAlignment="Top" Width="134"/>
+        <TextBox x:Name="txtRecivedAmount" FontSize="16" HorizontalAlignment="Left"
+                 Margin="665,320,0,0" 
+            Text="" VerticalAlignment="Top" Width="200" TextWrapping="Wrap" />
+
+
+
+
+
+        <Button x:Name="btnBillingSave" Content="Generate" HorizontalAlignment="Left" 
+                FontSize="20" VerticalAlignment="Top" Width="200" Background="LimeGreen"
+                Margin="255,475,0,0" Height="40" Click="btnSaveBilling_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnCloseAddBilling" Content="Cancel" HorizontalAlignment="Left" FontSize="20"
+                VerticalAlignment="Top" Height="40" Width="200" Margin="630,475,0,0" Background="Orange"
+                Click="btnCloseAddBilling_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+
+    </Grid>
+</Window>

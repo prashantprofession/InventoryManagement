@@ -1,0 +1,70 @@
+﻿<Window x:Class="Gasware.EmailTemplateChange"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gasware"
+        mc:Ignorable="d"  Top="80" Left="200" Background="CornflowerBlue"
+        Title="Email Template Maintainence" Height="600" Width="1000">
+    <Grid>
+
+        <Image Source="companylogo.png" Height="100" Margin="6,-23,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <TextBlock Name="vendorheading" Text="Email Template" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#FF51D316"                   
+               Height="40" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="20" Width="150" />
+
+        <TextBlock Name="emailid"  Text="From Email Id :" HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" Margin="200,70,0,0" Width="120" FontSize="16"/>
+        <TextBox Name="txtEmailId"   HorizontalAlignment="Left"  TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="400" Margin="360,68,0,0" FontSize="16"  />
+
+        <TextBlock Name="password"  Text="Email Password :" HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" Margin="200,120,0,0" Width="120" FontSize="16"/>
+        <PasswordBox Name="txtPassword"   HorizontalAlignment="Left"  FontSize="16"
+                   VerticalAlignment="Top" Width="400" Margin="360,120,0,0"   />
+
+        <TextBlock Name="displayName"  Text="From Display Name:" HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" Margin="200,170,0,0" Width="150" FontSize="16"/>
+        <TextBox Name="txtDisplayName"   HorizontalAlignment="Left"  TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" Width="400" Margin="360,170,0,0" FontSize="16"   />
+
+
+        <TextBlock Name="subject"  Text="Subject : " HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" Margin="200,220,0,0" Width="150" FontSize="16" />
+        <TextBox Name="txtSubject" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" FontSize="16"
+                 VerticalAlignment="Top" Width="400" Margin="360,220,0,0" />
+
+
+        <TextBlock Name="body"  Text="Body :"  HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Margin="200,290,0,0" Width="120" FontSize="16" />
+        <TextBox Name="txtBody" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="" BorderThickness="1"
+                 VerticalAlignment="Top" Width="400" Margin="360,292,0,0" Height="100"  FontSize="16"/>
+
+
+        <TextBlock Name="emailType"  Text="Email Type :"  HorizontalAlignment="Left" FontSize="16"
+                   VerticalAlignment="Top" Margin="200,416,0,0" Width="120" />
+
+        <ComboBox  HorizontalAlignment="Left" Text="Please Select" VerticalAlignment="Top" 
+                 Width="400" Margin="360,416,0,0" FontSize="16" 
+                  Height="34" x:Name="emailTypeCombo">
+            <ComboBoxItem Content="--Select a value--" IsSelected="True" HorizontalAlignment="Center"/>
+            <ComboBoxItem Content="Invoice"/>
+            <ComboBoxItem Content="BackUp"/>
+        </ComboBox>
+
+
+        <Button Content="Save" FontSize="20"   Background="LimeGreen"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="192,481,0,0" 
+                Height="40" Click="btnEmailTemplateSave_Click" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Cancel" FontSize="20"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="Orange"
+                Width="200" Margin="592,481,0,0" Height="40" Click="btnEmailTemplateClose_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>

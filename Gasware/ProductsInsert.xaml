@@ -1,0 +1,77 @@
+﻿<Window x:Class="Gasware.ProductsInsert"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gasware"
+        mc:Ignorable="d" Top="80" Left="200"  Background="CornflowerBlue"
+        Title="New Product" Height="600" Width="1000">
+    <Grid Height="600" Width="1000">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="companylogo.png" Height="100" Margin="0,-25,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label FontSize="20" FontWeight="Bold" Name="addUser"  Foreground="#FF51D316"
+               Content="Add Details" HorizontalAlignment="Center" Height="39" Margin="147,0,80.172,0" VerticalAlignment="Top" Width="213"/>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="260,60,0,0" TextWrapping="Wrap" 
+                   Text="Name :" VerticalAlignment="Top" Width="60"/>
+        <TextBox FontSize="16" Text="" x:Name="txtName"  HorizontalAlignment="Left" 
+                 Height="30"  Margin="380,55,0,0" 
+                  VerticalAlignment="Top" Width="300" TextWrapping="Wrap" />
+        <TextBlock  HorizontalAlignment="Left" Margin="260,120,0,0" TextWrapping="Wrap" FontSize="16"
+                   Text="Weight(Kgs):" VerticalAlignment="Top" Width="90"/>
+        <TextBox FontSize="16" x:Name="txtWeight"  HorizontalAlignment="Left" Height="30" 
+                  Margin="380,115,0,0"
+                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+
+        <TextBlock  HorizontalAlignment="Left" Margin="260,180,0,0" TextWrapping="Wrap" FontSize="16"
+                   Text="Unit Rate:" VerticalAlignment="Top" Width="90"/>
+        <TextBox FontSize="16" x:Name="txtUnitRate"  HorizontalAlignment="Left" Height="30" 
+                  Margin="380,175,0,0"
+                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+
+        <TextBlock   HorizontalAlignment="Left" Margin="260,240,0,0" TextWrapping="Wrap" FontSize="16"
+                   Text="Details :" VerticalAlignment="Top" Width="63"/>
+        <TextBox FontSize="16" x:Name="txtDetails"  HorizontalAlignment="Left" Height="30"  
+                  Margin="380,235,0,0" 
+                  Text="" VerticalAlignment="Top" Width="300" TextWrapping="Wrap" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="260,300,0,0" TextWrapping="Wrap" FontSize="16"
+                   Text="CGST Rate :" VerticalAlignment="Top" Width="100"/>
+        <TextBox FontSize="16" x:Name="txtCgstRate"  HorizontalAlignment="Left" Height="30" 
+                  Margin="380,295,0,0" 
+                  Text="" VerticalAlignment="Top" Width="300" TextWrapping="Wrap" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="260,360,0,0" TextWrapping="Wrap" FontSize="16"
+                   Text="SGST Rate :" VerticalAlignment="Top" Width="100"/>
+        <TextBox   x:Name="txtSgstRate"  HorizontalAlignment="Left" Height="30" 
+                  Margin="380,355,0,0" FontSize="16"
+                  Text="" VerticalAlignment="Top" Width="300" TextWrapping="Wrap" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="260,420,0,0" TextWrapping="Wrap" FontSize="16"
+                   Text="Is Billable :" VerticalAlignment="Top" Width="100"/>
+        <CheckBox x:Name="chkboxIsBillable"  HorizontalAlignment="Left" Height="30" 
+                  Margin="380,415,0,0" VerticalAlignment="Top" Width="20" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="552,420,0,0" TextWrapping="Wrap" FontSize="16"
+                   Text="Is Expense :" VerticalAlignment="Top" Width="90"/>
+        <CheckBox x:Name="chkboxIsExpense"  HorizontalAlignment="Left" Height="30" 
+                  Margin="662,418,0,0" VerticalAlignment="Top" Width="20" />
+
+        <Button x:Name="btnProductSave" Content="Save" HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Top" 
+                Margin="200,480,0,0" Background="LimeGreen" Height="40" Width="200" Click="btnSaveProduct_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnCloseAddProduct" Content="Cancel" HorizontalAlignment="Left" FontSize="20"
+                VerticalAlignment="Top" Height="40" Width="200" Margin="600,480,0,0" Background="Orange"
+                Click="btnCloseAddProduct_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>
